@@ -122,7 +122,9 @@ add_action( 'widgets_init', 'tmcc_widgets_init' );
 function tmcc_scripts() {
 	wp_enqueue_style( 'tmcc-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'tmcc-custom-style', get_template_directory_uri() . '/public/css/app.css' );
 
+	wp_enqueue_script( 'tmcc-custom-script', get_template_directory_uri() . '/public/js/app.js' );
 }
 add_action( 'wp_enqueue_scripts', 'tmcc_scripts' );
 
@@ -152,4 +154,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
