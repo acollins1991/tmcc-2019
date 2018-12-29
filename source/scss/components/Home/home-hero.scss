@@ -1,5 +1,20 @@
 .tmcc-home-hero {
+  &__connect-button {
+    border-radius:25px;
+  }
   &__link {
-    padding:40px;
+    position:relative;
+    display: inline-block;
+    background-color:#ffffff;
+    padding: 2rem;
+    &:after {
+      content:'';
+      position: absolute;
+      width:500px;
+      height:100%;
+      top:0;
+      left:-485px;
+      background-color:#ffffff;
+    }
   }
 }
