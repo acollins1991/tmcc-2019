@@ -107,75 +107,26 @@
   </div>
 </div>
 
-<div class="uk-section uk-container uk-container-xsmall">
-  <h2 class="uk-text-center">Who we've worked with</h2>
+
   <?php
     if( have_rows('clients') ):
       ?>
-      <div uk-grid class="uk-child-width-1-4">
+      <div class="uk-section uk-container uk-container-xsmall">
+        <h2 class="uk-text-center">Who we've worked with</h2>
+        <div uk-grid class="uk-child-width-1-4">
       <?php
       while ( have_rows('clients') ) : the_row();
         echo '<div>';
-        if( get_sub_field('client_name') && get_sub_field('client_image') ) {
-          echo '<img src="'.get_sub_field('client_image').'">';
+        if( get_sub_field('client_name') && get_sub_field('client_logo') && get_sub_field('client_link') ) {
+          echo '<a href="'.get_sub_field('client_link').'"><img src="'.get_sub_field('client_logo').'" al="'.get_sub_field('client_name').'"></a>';
         }
         echo '</div>';
       endwhile;
       ?>
+        </div>
       </div>
       <?php
     endif;
   ?>
-  <div uk-grid class="uk-child-width-1-4">
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150x150">
-    </div>
-  </div>
-</div>
 
 <?php get_footer(); ?>
