@@ -2,24 +2,10 @@
   get_header();
 ?>
 
-<div uk-height-viewport class="uk-flex uk-flex-column uk-flex-between uk-background-norepeat uk-background-cover uk-background-center-center" style="background-image:url(http://placekitten.com/1500/1500);">
-  <div>
+<div uk-height-viewport class="tmcc-home-hero uk-flex uk-flex-column uk-flex-between uk-background-norepeat uk-background-cover uk-background-center-center" style="background-image:url(http://placekitten.com/1500/1500);">
+  <div class="uk-margin-large-top">
     <div class="uk-container">
-      <nav class="uk-flex uk-flex-between uk-flex-middle uk-padding-small uk-padding-remove-horizontal">
-        <div>
-          <a href="/">
-            <img src="https://via.placeholder.com/150x50">
-          </a>
-        </div>
-        <div>
-          <a class="uk-button uk-button-default" href="#">Contact Us</a
-        </div>
-      </nav>
-    </div>
-  </div>
-  <div>
-    <div class="uk-container">
-      <img src="https://via.placeholder.com/150x50">
+      <img src="<?php echo get_template_directory() . '/public/assets/tmcc.svg'; ?>">
       <?php if ( get_field('introduction_text') ) : ?>
         <h1 class="uk-h2"><?php the_field( 'introduction_text' ) ; ?></h1>
       <?php endif; ?>
@@ -86,17 +72,17 @@
           <ul class="uk-list uk-list-divider">
           <?php
           while ( have_rows('services') ) : the_row();
-            echo '<li>';
+            echo '<li><div uk-grid><div class="uk-width-2-3">';
             if( get_sub_field('service_name') ) {
               echo '<h3>'.get_sub_field('service_name').'</h3>';
             }
             if( get_sub_field('service_description') ) {
-              echo '<p>'.get_sub_field('service_description').'</p>';
+              echo '<p>'.get_sub_field('service_description').'</p></div>';
             }
             if( get_sub_field('service_page') ) {
-              echo '<a href="'.get_sub_field('service_page').'">Learn More</a>';
+              echo '<div class="uk-width-1-3 uk-text-right"><a href="'.get_sub_field('service_page').'">Learn More</a></div>';
             }
-            echo '</li>';
+            echo '</div></li>';
           endwhile;
           ?>
           </ul>

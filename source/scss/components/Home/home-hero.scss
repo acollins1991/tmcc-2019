@@ -1,4 +1,7 @@
 .tmcc-home-hero {
+  h1 {
+    color: #ffffff;
+  }
   &__connect-button {
     border-radius:25px;
   }
@@ -7,6 +10,9 @@
     display: inline-block;
     background-color:#ffffff;
     padding: 2rem;
+    &:hover {
+      text-decoration: none;
+    }
     &:after {
       content:'';
       position: absolute;
