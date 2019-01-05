@@ -11,22 +11,18 @@
 
 ?>
 
-<?php wp_footer(); ?>
+<?php
 
-<div class="uk-container uk-margin-top">
-<hr/>
-<div class="uk-flex uk-flex-between uk-flex-middle">
-    <div>
-			<span class="uk-h6">Copyright The Marketing Campaign Company <?php echo date('Y'); ?></span>
-		</div>
-		<div>
-			<ul class="uk-iconnav">
-			    <li><a href="" uk-icon="icon: twitter; ratio: 0.8"></a></li>
-					<li><a href="" uk-icon="icon: linkedin; ratio: 0.8"></a></li>
-			</ul>
-		</div>
-</div>
-</div>
+// Check and show site footer if isn't contact us page
+if( !is_page(45) ) {
+
+  get_template_part( 'template-parts/site', 'footer' );
+
+}
+
+wp_footer();
+
+?>
 
 </body>
 </html>
