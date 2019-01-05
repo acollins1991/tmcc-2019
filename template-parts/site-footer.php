@@ -1,4 +1,4 @@
-<footer class="uk-container uk-margin-top">
+<footer class="uk-container uk-margin-top uk-margin-bottom">
 <hr/>
 <div class="uk-flex uk-flex-between uk-flex-middle">
     <div>

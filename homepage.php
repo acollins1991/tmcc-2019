@@ -2,7 +2,7 @@
   get_header();
 ?>
 
-<div uk-height-viewport class="tmcc-home-hero uk-flex uk-flex-column uk-flex-between uk-background-norepeat uk-background-cover uk-background-center-center" style="background-image:url(http://placekitten.com/1500/1500);">
+<div uk-height-viewport class="tmcc-home-hero uk-flex uk-flex-column uk-flex-between uk-background-norepeat uk-background-cover uk-background-center-center" style="background-image:url(<?php the_field('background_image'); ?>);">
   <div class="uk-margin-large-top">
     <div class="uk-container">
       <img src="<?php echo get_template_directory() . '/public/assets/tmcc.svg'; ?>">

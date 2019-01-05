@@ -10,17 +10,16 @@
           <h1>Contact Us</h1>
         </div>
         <div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non ligula sem.</p>
+          <?php the_field('introduction'); ?>
         </div>
         <div>
           <h2 class="uk-h4">Get In Touch</h2>
           <address>
-            The Marketing Campaign Company</br>
-            Global House, 1 Ashley Avenue</br>
-            Epsom, Surrey</br>
-            KT18 5AD
+            <?php the_field('address'); ?>
           </address>
-          <p>00000000000</p>
+          <?php if( get_field('phone_number') ) {
+            echo '<p>'.get_field('phone_number').'</p>';
+          } ?>
         </div>
         <div class="tmcc-contact-form">
           <?php echo do_shortcode('[contact-form-7 id="47" title="Contact form 1"]'); ?>
@@ -32,6 +31,7 @@
     </div>
   </div>
 </div>
+<div class="tmcc-contact-background" role="presentation" style="background-image:url(<?php the_field('background_image'); ?>"></div>
 
 <?php
   get_footer();

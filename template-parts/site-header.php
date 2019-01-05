@@ -7,7 +7,7 @@
 				</a>
 			</div>
 			<div>
-				<a class="uk-button uk-button-default" href="#">Contact Us</a
+				<a class="uk-button uk-button-default" href="/contact-us">Contact Us</a
 			</div>
 		</nav>
 	</div>

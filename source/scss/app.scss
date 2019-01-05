@@ -21,6 +21,15 @@ $base-blockquote-font-style: normal;
   font-family: $base-heading-font-family;
   font-size: $global-font-size;
 }
+  // form
+@mixin hook-form-single-line(){
+  background: none;
+  border-bottom: solid 1px $global-border;
+}
+@mixin hook-form-multi-line(){
+  background: none;
+  border-bottom: solid 1px $global-border;
+}
 
 // 4. Import UIkit.
 @import "../../node_modules/uikit/src/scss/uikit.scss";
@@ -29,3 +38,4 @@ $base-blockquote-font-style: normal;
 @import "./components/Home/home-hero.scss";
 @import "./components/Home/services-section.scss";
 @import "./components/Contact/contact-form.scss";
+@import "./components/Contact/background-image.scss";
