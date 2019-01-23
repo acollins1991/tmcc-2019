@@ -1,4 +1,4 @@
-<header>
+<header class="tmcc-header">
 	<div class="uk-container">
 		<nav class="uk-flex uk-flex-between uk-flex-middle uk-padding-small uk-padding-remove-horizontal">
 			<div>
@@ -7,7 +7,7 @@
 				</a>
 			</div>
 			<div>
-				<a class="uk-button uk-button-default" href="/contact-us">Contact Us</a
+				<a class="uk-button uk-button-default tmcc-header__contact-link" href="/contact-us">Contact Us</a>
 			</div>
 		</nav>
 	</div>

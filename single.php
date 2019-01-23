@@ -10,28 +10,31 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<div class="uk-container uk-margin-large-top uk-margin-large-bottom">
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<h1><?php the_title() ;?></h1>
+	<div class="uk-flex" uk-grid>
+		<main class="uk-width-1-2">
+			<?php the_content(); ?>
+		</main>
+		<aside class="uk-width-1-4 uk-flex-first">
+			<h2 class="uk-h4">Share</h2>
+			<div>
+		    <!-- Facebook -->
+		    <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" target="_blank" uk-icon="icon: facebook"></a>
+			</div>
+			<div>
+		    <!-- Twitter -->
+		    <a href="https://twitter.com/share?url=<?php the_permalink(); ?>&amp;text=<?php echo urlencode(get_the_title()); ?>" target="_blank" uk-icon="icon: twitter"></a>
+			</div>
+			<div>
+				<!-- Email -->
+				<a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com" uk-icon="icon: mail"></a>
+			</div>
+		</aside>
+	</div>
+	<?php endwhile; endif; ?>
+</div>
 
 <?php
-get_sidebar();
 get_footer();

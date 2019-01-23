@@ -129,6 +129,13 @@ function tmcc_scripts() {
 add_action( 'wp_enqueue_scripts', 'tmcc_scripts' );
 
 /**
+* Register services menu
+*/
+register_nav_menus( array(
+	'services_menu' => 'Services Menu'
+) );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

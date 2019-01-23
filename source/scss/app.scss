@@ -35,6 +35,7 @@ $base-blockquote-font-style: normal;
 @import "../../node_modules/uikit/src/scss/uikit.scss";
 
 // Custom components
+@import "./components/Site/tmcc-header.scss";
 @import "./components/Home/home-hero.scss";
 @import "./components/Home/services-section.scss";
 @import "./components/Contact/contact-form.scss";

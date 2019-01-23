@@ -15,8 +15,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="uk-container">
 
 		<?php
 		if ( have_posts() ) :
@@ -24,23 +23,47 @@ get_header();
 			if ( is_home() && ! is_front_page() ) :
 				?>
 				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					<h1 class="uk-text-center uk-margin-large-bottom uk-margin-top">Our Blog</h1>
 				</header>
 				<?php
 			endif;
+
+			?>
+
+			<div class="uk-child-width-1-3" uk-grid>
+
+			<?php
 
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+			?>
+
+			<a href="<?php the_permalink; ?>" class="uk-link-reset">
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+					<img src="https://via.placeholder.com/400x250">
+
+					<?php the_title( '<h1 class="uk-h3 uk-margin-top">', '</h1>' ); ?>
+					<div class="entry-content">
+						<?php	the_content(); ?>
+					<div>
+					<div class="entry-meta">
+						<p class="uk-text-meta"><?php echo get_the_date(); ?></p> 
+					</div>
+				</article>
+			</a>
+
+			<?php
 
 			endwhile;
+
+			?>
+
+			</div>
+
+			<?php
 
 			the_posts_navigation();
 
@@ -51,9 +74,7 @@ get_header();
 		endif;
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div>
 
 <?php
-get_sidebar();
 get_footer();
