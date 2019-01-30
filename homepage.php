@@ -5,7 +5,7 @@
 <div uk-height-viewport class="tmcc-home-hero uk-flex uk-flex-column uk-flex-between uk-background-norepeat uk-background-cover uk-background-center-center" style="background-image:url(<?php the_field('background_image'); ?>);">
   <div class="uk-margin-large-top">
     <div class="uk-container">
-      <img src="<?php echo get_template_directory() . '/public/assets/tmcc.svg'; ?>">
+      <img class="tmcc-home-hero__logo" src="<?php echo get_stylesheet_directory_uri() . '/public/assets/tmcc.svg'; ?>" uk-svg>
       <?php if ( get_field('introduction_text') ) : ?>
         <h1 class="uk-h2"><?php the_field( 'introduction_text' ) ; ?></h1>
       <?php endif; ?>
